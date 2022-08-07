@@ -23,15 +23,15 @@ publication_types: ['2']
 publication: In *Journal of Public Administration (RAP),  v. 51, n. 6*
 publication_short: In *RAP*
 
-abstract: In the present paper, an investigation regarding the transformations of studies published in the Brazilian Journal 
-of Public Administration (RAP) from 2003 to 2016 was conducted, through bibliometric research. The main results 
-indicate consolidation of the field, with an increase in the number of authors per article. Most authors were male, 
-although with a high participation of female researchers, in a context where most authors are Brazilian, from public 
-institutions. Case-studies, applied-approaches and quantitative methodology studies increased in comparison to 
-studies published from 1994 to 2002.
+#abstract: In the present paper, an investigation regarding the transformations of studies published in the Brazilian Journal 
+#of Public Administration (RAP) from 2003 to 2016 was conducted, through bibliometric research. The main results 
+#indicate consolidation of the field, with an increase in the number of authors per article. Most authors were male, 
+#although with a high participation of female researchers, in a context where most authors are Brazilian, from public 
+#institutions. Case-studies, applied-approaches and quantitative methodology studies increased in comparison to 
+3studies published from 1994 to 2002.
 
 # Summary. An optional shortened abstract.
-summary: 
+#summary: 
 
 tags:
   - Source Themes
