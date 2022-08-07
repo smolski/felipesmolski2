@@ -28,7 +28,7 @@ publication_short: In *RAP*
 #indicate consolidation of the field, with an increase in the number of authors per article. Most authors were male, 
 #although with a high participation of female researchers, in a context where most authors are Brazilian, from public 
 #institutions. Case-studies, applied-approaches and quantitative methodology studies increased in comparison to 
-3studies published from 1994 to 2002.
+#3studies published from 1994 to 2002.
 
 # Summary. An optional shortened abstract.
 #summary: 
