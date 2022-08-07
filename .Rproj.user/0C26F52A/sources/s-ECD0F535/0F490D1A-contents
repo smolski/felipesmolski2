@@ -114,3 +114,4 @@ cascade:
   - _target:
       path: /publication/**
     share: false
+sharing: false
