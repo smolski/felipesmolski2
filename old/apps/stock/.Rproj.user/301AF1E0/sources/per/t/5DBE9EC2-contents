@@ -1,0 +1,21 @@
+library(shiny)
+
+# Create ui
+ui <- fluidPage(
+  numericInput('bzc','bzc',value=2),
+  numericInput('bzm','bzm',value=2),
+  checkboxInput('change_sign','Change sign'),
+  textOutput('text')
+)
+
+server <- function(input, output) {
+  
+  output$text <- renderText({
+    bzc = ifelse(input$change_sign,-1,1) * input$bzc
+    bzm = input$bzm
+    paste0('bzc: ', bzc, ', bzm: ', bzm)
+  })
+  
+}
+
+shinyApp(ui = ui, server = server)

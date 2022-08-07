@@ -1,0 +1,28 @@
+getSymbols("BOVA11.SA", src = "yahoo",
+           auto.assign = FALSE) %>% 
+  hchart
+
+
+prices <- getSymbols("BOVA11.SA", auto.assign = FALSE)
+
+hchart(prices) %>% 
+hc_add_series(SMA(Cl(prices), n = 5), yAxis = 0, name = "Fast MA 5 ") %>% 
+  hc_add_series(SMA(Cl(prices), n = 500), yAxis = 0, name = "Slow MA 500") 
+
+
+symbols <- c("BOVA11.SA", "ABEV3.SA", "LREN3.SA", "PETR4.SA", "VALE3.SA")
+symbols <- c("BOVA11.SA", "ABEV3.SA")
+
+prices <- getSymbols(symbols,
+                     from = "2010-01-01",
+                     to = "2020-01-01",
+                     auto.assign = TRUE) %>%
+  map(~Ad(get(.))) %>%
+  reduce(merge) %>%
+  `colnames<-`(symbols)  
+
+
+
+
+prices_monthly <- to.monthly(prices, indexAt = "last", OHLC = FALSE)
+asset_returns_xts <- na.omit(Return.calculate(prices_monthly, method = "log"))

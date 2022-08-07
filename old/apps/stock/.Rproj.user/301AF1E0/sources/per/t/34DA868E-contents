@@ -1,0 +1,50 @@
+setwd("D:/Educ/Dout_Unisinos/UNISINOSTese/dados/sisb")
+
+temp <- tempfile()
+download.file("D:/Educ/Dout_Unisinos/UNISINOSTese/dados/sisb/201112_ESTBAN.zip",temp)
+data <- read.table(unz(temp, "a1.dat"))
+unlink(temp)
+
+#### UM ARQUIVO ZIP (OK)
+data <- read.table(unz("201112_ESTBAN.ZIP", "201112_ESTBAN.CSV"), nrows=10, header=T, sep=";",  skip = 2)
+
+#### FAZER UNZIP PASTA INTEIRA (ok)
+library(plyr)
+mydir = "D:/Educ/Dout_Unisinos/UNISINOSTese/dados/sisb"
+zip_file = list.files(path = mydir, pattern = "*.ZIP", full.names = TRUE)
+zip_file
+ldply(.data = zip_file, .fun = unzip, exdir = mydir)
+
+### LER MULTIPLOS
+
+library(plyr)
+
+# get all the zip files
+zipF <- list.files(path = "D:/Educ/Dout_Unisinos/UNISINOSTese/dados/sisb", pattern = "*.ZIP", full.names = TRUE)
+
+# unzip all your files
+ldply(.data = zipF, .fun = unzip, exdir = mydir)
+
+csv_files <- list.files(path = mydir, pattern = "*.CSV")
+
+library(data.table)  
+mydir = "D:/Educ/Dout_Unisinos/UNISINOSTese/dados/sisb"
+files <- list.files(path = mydir, pattern = ".CSV")
+temp <- lapply(files, fread, sep=";")
+data <- rbindlist( temp )
+rm(temp)
+
+table(data$NOME_INSTITUICAO)
+table(data$UF)
+table(data$MUNICIPIO)
+
+table(data$`#DATA_BASE`)
+
+
+# read the csv files
+# library(readr)
+# read.csv2 = read.csv()
+# my_data <- read_delim(ldply(.data = csv_files, .fun = read.csv),  ";", escape_double = FALSE, trim_ws = TRUE, 
+#                       skip = 2)
+
+

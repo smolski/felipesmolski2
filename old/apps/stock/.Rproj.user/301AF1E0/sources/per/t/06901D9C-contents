@@ -1,0 +1,187 @@
+
+https://rpubs.com/financeR/RfundosBR
+library(httr)
+library(xts)
+library(dplyr)
+library(PerformanceAnalytics)
+library(quantmod)
+library(stringr)
+library(tidyr)
+library(knitr)
+
+
+NomeFundo<-function(x){
+  temp <- tempfile()
+  download.file("http://dados.cvm.gov.br/dados/FI/CAD/DADOS/cad_fi_hist.zip",temp)
+  data <- read.table(unz(temp, "cad_fi_hist_denom_social.csv"),sep=';')%>% filter(str_detect(V3, x))%>% select(V1,V3)
+}
+
+df<-NomeFundo('BANRISUL')## função para buscar o nome
+DT::datatable(head(df), editable = 'cell')
+cnpj<-00743023000196 ## esse é o CNPJ do Long Bias do Verde Asset
+data_inicial<-2017101 #de 2017 para frente
+data_final<-20171228 #provavelmente não terá informações do dia corrente, há delay na CVM
+
+fundosBR<-function(cnpj,data_inicial,data_final){
+  df<-GET(paste0('https://www.okanebox.com.br/api/fundoinvestimento/hist/',cnpj,'/',data_inicial,'/',data_final,'/')) %>%
+    content() %>% do.call(rbind.data.frame,.)
+  df<-xts(df[,4:8],order.by = as.POSIXct(df$DT_COMPTC))
+  colnames(df)<-c('Quota','PL_liquido','Capt_dia','Resg_dia','N_cotista')
+  return(df)
+}
+
+base1<-fundosBR(cnpj,data_inicial,data_final) # baixando os dados do CNPJ e do período selecionado
+
+head(base1)
+
+############## 2
+
+library(tidyverse)
+library(data.table)
+library(rio)
+library(readxl)
+library(xlsx)
+
+CVM_fundos = function(data_inicio, data_final, CNPJ){
+  
+  data_inicio = as.Date(data_inicio)
+  data_final = as.Date(data_final)
+  ano_1 = format(seq(data_inicio, data_final, by = 'month'),'%Y%m')
+  
+  if (as.integer(format(data_inicio, '%Y')) >2016 & as.integer(format(data_final,'%Y')) >2016){
+    
+    
+    urls = map_chr(ano_1, ~paste0('http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/inf_diario_fi_', .x,'.csv'))
+    
+    dados_fundos= urls %>%
+      map_dfr(~fread(.x)) %>%
+      filter(DT_COMPTC >= data_inicio, DT_COMPTC <= data_final, CNPJ_FUNDO %in% c(CNPJ))
+    
+    export(dados_fundos, paste0('Fundos',runif(1),'.xlsx'))
+    
+  }
+  else if (as.integer(format(data_final, '%Y')) <= 2016 & as.integer(format(data_inicio,'%Y')) <= 2016) {
+    
+    anos_2 = as.integer(format(data_inicio,'%Y')):as.integer(format(data_final,'%Y'))
+    
+    fundos_2 = map_chr(anos_2,
+                       ~paste0('http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/HIST/inf_diario_fi_', .x,'.zip'))
+    filename = paste0('Arquivo', 1:length(fundos_2), '.zip')
+    map2(.x = fundos_2, .y = filename, download.file)
+    
+    files = map(filename, .f = unzip, exdir = getwd()) %>% 
+      unlist()
+    dados_fundos2 = files %>% 
+      map_dfr(~fread(.)) %>% 
+      filter(DT_COMPTC >= data_inicio, DT_COMPTC <= data_final,  CNPJ_FUNDO %in% c(CNPJ))
+    file.remove(files)
+    file.remove(filename)
+    export(dados_fundos2, basename(paste0('Fundos',rnorm(1),'.xlsx')))
+  }
+  
+  else if (as.integer(format(data_final, '%Y')) > 2016 & 
+           as.integer(format(data_inicio,'%Y')) >= 2005 &
+           as.integer(format(data_inicio,'%Y')) <= 2016) {
+    
+    anos_3 = as.integer(format(data_inicio,'%Y')):2016
+    
+    fundos_3 = map_chr(anos_3,
+                       ~paste0('http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/HIST/inf_diario_fi_', .x,'.zip')) 
+    
+    filename = paste0('Arquivo', 1:length(fundos_3), '.zip')
+    
+    map2(.x = fundos_3, .y = filename, download.file)
+    
+    files = map(filename, .f = unzip, exdir = getwd()) %>% 
+      unlist() 
+    
+    dados_fundos3 = files %>% 
+      map_dfr(~fread(.))%>%
+      filter(DT_COMPTC >= data_inicio, DT_COMPTC <= data_final, CNPJ_FUNDO %in% c(CNPJ))
+    
+    file.remove(files)
+    file.remove(filename)
+    
+    anos_4 = format(seq(as.Date('2017-01-01'), data_final, by = 'month'),'%Y%m')
+    
+    dados_fundos4 = map_chr(anos_4, ~paste0('http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/inf_diario_fi_', .x,'.csv')) %>% 
+      map_dfr(~fread(.x)) %>% 
+      filter(DT_COMPTC >= as.Date('2017-01-01'), DT_COMPTC <= data_final, CNPJ_FUNDO %in% c(CNPJ))
+    
+    
+    fundos_final = bind_rows(dados_fundos3, dados_fundos4)
+    export(fundos_final, paste0('fundos', runif(1), '.xlsx'))
+    
+  }
+}
+
+
+CVM_fundos(data_inicio = as.Date('2019-10-01'), data_final = as.Date('2020-01-01'), CNPJ = '29.242.437/0001-13')
+
+
+
+
+##### 3
+# http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/
+  
+tbl <-
+  list.files(path = "http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/",
+             pattern = "*.csv", 
+             full.names = T) %>% 
+  map_df(~read_csv(., col_types = cols(.default = "c"))) 
+
+
+scrape_csv <- function(linksfee){
+  #create urls
+  animal.urls <- paste0("http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/", linksfee)
+  #read in file
+  df <- read_csv(animal.urls)
+  #add animal name as col
+  df$link <- linksfee
+  return(df)
+}
+
+linksfee=as.list("dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/inf_diario_fi_201701.csv",
+                 "dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/inf_diario_fi_201702.csv")
+
+
+df_results <- linksfee %>% purrr::map_df( scrape_csv )
+
+csv_files <- list.files(path = mydir, pattern = "*.csv")
+
+mydir = "dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS"
+zip_file = list.files(path = mydir, pattern = "*.csv", full.names = TRUE)
+zip_file
+ldply(.data = zip_file, .fun = unzip, exdir = mydir)
+
+
+library("dplyr")                                                
+library("plyr")                                               
+library("readr")  
+
+gfg_data <- list.files(path = "D:/Educ/Dout_Unisinos/UNISINOSTese/dados/sisb/", 
+                       pattern = "*.CSV", full.names = TRUE) %>%
+  lapply(read_csv) %>%                                          
+  bind_rows                                                      
+
+gfg_data
+
+###########
+
+library(rvest)
+library(stringr)
+page <- html("http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/")
+
+url <- page %>%
+  html_nodes("a") %>%       # find all links
+  html_attr("href") %>%     # get the url
+  str_subset("\\.csv")
+
+url <- "https://www.data.gov/media/federal-agency-participation.csv"
+# use read.csv to import
+data_gov <- read.csv(linksfee, stringsAsFactors = FALSE)
+
+url <- "http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/"
+
+bookingdata <- read_html(url)
+bookingdata
