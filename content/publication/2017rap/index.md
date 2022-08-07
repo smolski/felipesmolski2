@@ -2,11 +2,11 @@
 title: 'Analysis of the scientific production profile of the journal Brazilian Journal of Public Administration (RAP) in the period 2003-16'
 
 authors:
-  - admin
-  - D Dalcin
-  - MS Visentini
-  - J Bamberg
-  - JS Kern
+  - Smolski FMS
+  - Dalcin D
+  - Visentini MS
+  - Bamberg J
+  - Kern JS
 date: '2017-07-01T00:00:00Z'
 doi: '10.1590/0034-761220170046'
 
