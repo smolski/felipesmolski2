@@ -1,0 +1,9 @@
+"0","Mun <- Mun %>%
+  select(SIGLA_UF, DESCRICAO_CARGO, CODIGO_MUNICIPIO, TOTAL_VOTOS,
+         NUMERO_CAND, NOME_MUNICIPIO, NUM_TURNO, SIGLA_PARTIDO) %>%
+  mutate(NOME_MUNICIPIO = stri_trans_general(NOME_MUNICIPIO, ""Latin-ASCII""))
+"
+"2","Error: Can't subset columns that don't exist.
+[31mx[39m Column `NUMERO_CAND` doesn't exist.
+[90mRun `rlang::last_error()` to see where the error occurred.[39m
+"

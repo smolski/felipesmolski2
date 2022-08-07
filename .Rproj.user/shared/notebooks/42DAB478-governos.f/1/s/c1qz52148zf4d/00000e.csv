@@ -1,0 +1,4 @@
+"0","ggsdc(ipca, aes(x =  as.numeric(date), y =value), method = ""seas"") + geom_line()
+"
+"2","Error in `[.data.frame`(data, , xvar) : colunas indefinidas selecionadas
+"

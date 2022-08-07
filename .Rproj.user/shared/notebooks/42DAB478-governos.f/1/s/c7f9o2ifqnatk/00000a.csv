@@ -1,0 +1,29 @@
+"0","ggplotly(
+ggplot(pib.trim, aes(x=date, y=value))+
+  geom_line()+
+  labs(color="""")+ xlab(""Data"")+ ylab(""Var. % trimestral"")+    
+  theme(legend.position = ""bottom"")+
+    annotate(""rect"", 
+             xmin = as.Date(""2020-03-01"", ""%Y-%m-%d""), 
+             xmax = as.Date(""2021-06-01"", ""%Y-%m-%d""), 
+             ymin=-Inf,  
+             ymax=Inf, 
+             fill=""grey"", 
+             alpha=0.5)+
+    theme(axis.text.x = element_text(size=10),
+        axis.text.y = element_text(size=10),  
+        axis.title.x = element_text(size=10),
+        axis.title.y = element_text(size=10),
+        legend.text = element_text(size=10))+
+  xlim(as.Date(c(""2000-01-01"", ""2020-12-01""), format=""%Y-%m-%d""))+
+   scale_color_stata()+
+   theme_stata()+
+   scale_x_date(breaks = pib.trim$date, date_breaks = ""1 year"", date_labels = ""%Y-%b"") + 
+   theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+   labs(title='PIB trimestral - Dados observados - \nProduto Interno Bruto a preços de mercado',
+       # subtitle='',
+       caption='Dados: IPEADATA')
+)
+"
+"2","Scale for 'x' is already present. Adding another scale for 'x', which will replace the existing scale.
+"

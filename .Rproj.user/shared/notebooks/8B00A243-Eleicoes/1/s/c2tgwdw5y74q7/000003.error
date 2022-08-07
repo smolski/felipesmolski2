@@ -1,0 +1,1 @@
+{"frames":[{"func":"load(\"D:/Github/CovidML/eleicoes.RData\")","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in load(\"D:/Github/CovidML/eleicoes.RData\") : \n  SET_VECTOR_ELT() can only be applied to a 'list', not a 'raw'\n"}

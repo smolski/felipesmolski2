@@ -1,0 +1,7 @@
+"0","load(""D:/Github/CovidML/eleicoes.RData"")
+"
+"2","Error in load(""D:/Github/CovidML/eleicoes.RData"") : 
+  SET_VECTOR_ELT() can only be applied to a 'list', not a 'raw'
+"
+"2","invalid option ""error""
+"
