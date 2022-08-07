@@ -20,8 +20,8 @@ publishDate: '2022-08-02T00:00:00Z'
 publication_types: ['2']
 
 # Publication name and optional abbreviated publication name.
-publication: In *Journal of Public Administration (RAP),  v. 51, n. 6*
-publication_short: In *RAP*
+publication: *Journal of Public Administration (RAP),  v. 51, n. 6*
+publication_short: *RAP*
 
 #abstract: In the present paper, an investigation regarding the transformations of studies published in the Brazilian Journal 
 #of Public Administration (RAP) from 2003 to 2016 was conducted, through bibliometric research. The main results 
@@ -72,14 +72,6 @@ projects: []
 # slides: example
 ---
 
-{{% callout note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
 
-{{% callout note %}}
-Create your slides in Markdown - click the *Slides* button to check out the example.
-{{% /callout %}}
-
-Supplementary notes can be added here, including [code, math, and images](https://wowchemy.com/docs/writing-markdown-latex/).
 
 
