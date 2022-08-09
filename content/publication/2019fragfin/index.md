@@ -1,5 +1,5 @@
 ---
-title: 'Financial fragility of northwest Rio Grande do Sul region’s: business cycle and individual characteristic impacts'
+title: 'Fragilidade financeira das empresas da região noroeste do Rio Grande do Sul: impactos do ciclo de negócios e das suas características individuais'
 
 authors:
   - Smolski FMS
