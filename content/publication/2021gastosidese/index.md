@@ -1,25 +1,25 @@
 ---
-title: 'Software R: Análise estatística de dados utilizando um programa livre'
+title: 'Evolução das despesas públicas em políticas sociais na região funcional 7 e impactos no IDESE'
 
 authors:
-  - Battisti ID
-  - Smolski FMS
+    - Rotta E
+    - Smolski FMS
 
-date: '2019-12-01T00:00:00Z'
-doi: 
+date: '2020-10-01T00:00:00Z'
+doi: 'https://doi.org/10.24302/drd.v10i0.2789'
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2022-08-02T00:00:00Z'
+publishDate: '2022-08-08T00:00:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
-publication_types: ['5']
+publication_types: ['2']
 
 # Publication name and optional abbreviated publication name.
-publication: In *Editora Faith*
-publication_short: 
+publication: In *DRd-Desenvolvimento Regional em debate*
+publication_short: In *DRd*
 
 #abstract: In the present paper, an investigation regarding the transformations of studies published in the Brazilian Journal 
 #of Public Administration (RAP) from 2003 to 2016 was conducted, through bibliometric research. The main results 
@@ -38,7 +38,7 @@ featured: true
 # links:
 # - name: ""
 #   url: ""
-url_pdf: https://www.researchgate.net/profile/Felipe-Smolski/publication/335854013_Software_R_Analise_estatistica_de_dados_utilizando_um_programa_livre/links/5d803ed592851c22d5dd3599/Software-R-Analise-estatistica-de-dados-utilizando-um-programa-livre.pdf
+url_pdf: http://www.periodicos.unc.br/index.php/drd/article/view/2789/1393
 url_code: ''
 url_dataset: ''
 url_poster: ''
