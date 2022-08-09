@@ -1,27 +1,24 @@
 ---
-title: 'Analysis of the scientific production profile of the journal Brazilian Journal of Public Administration (RAP) in the period 2003-16'
+title: 'A relação entre crédito e inovação: uma revisão sistemática da literatura empírica'
 
 authors:
   - Smolski FMS
-  - Dalcin D
-  - Visentini MS
-  - Bamberg J
-  - Kern JS
-date: '2017-07-01T00:00:00Z'
-doi: '10.1590/0034-761220170046'
+  - Ruffoni J
+date: '2021-10-01T00:00:00Z'
+doi: 
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2022-08-02T00:00:00Z'
+publishDate: '2022-08-08T00:00:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
-publication_types: ['2']
+publication_types: ['1']
 
 # Publication name and optional abbreviated publication name.
-publication: In *Journal of Public Administration (RAP),  v. 51, n. 6*
-publication_short: In *RAP*
+publication: In *I Encontro Nacional de Jovens Pesquisadores (ENJP)*
+publication_short: In *ENJP*
 
 #abstract: In the present paper, an investigation regarding the transformations of studies published in the Brazilian Journal 
 #of Public Administration (RAP) from 2003 to 2016 was conducted, through bibliometric research. The main results 
@@ -34,14 +31,13 @@ publication_short: In *RAP*
 #summary: 
 
 tags:
-  - Source Themes
 
 featured: true
 
 # links:
 # - name: ""
 #   url: ""
-url_pdf: http://www.scielo.br/pdf/rap/v51n6/1982-3134-rap-51-06-1139.pdf
+url_pdf: https://www.researchgate.net/profile/Felipe-Smolski/publication/358228296_A_relacao_entre_credito_e_inovacao_uma_revisao_sistematica_da_literatura_empirica/links/61f6d20711a1090a79c0dec8/A-relacao-entre-credito-e-inovacao-uma-revisao-sistematica-da-l
 url_code: ''
 url_dataset: ''
 url_poster: ''
