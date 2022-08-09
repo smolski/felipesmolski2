@@ -1,5 +1,5 @@
 ---
-title: 'A relação entre crédito e inovação: uma revisão sistemática da literatura empírica'
+title: 'The relationship between credit and innovation: a systematic review of the empirical literature'
 
 authors:
   - Smolski FMS

@@ -5,8 +5,8 @@ authors:
   - Battisti ID
   - Smolski FMS
 
-date: '2017-07-01T00:00:00Z'
-doi: '10.1590/0034-761220170046'
+date: '2019-12-01T00:00:00Z'
+doi: '978-85-68221-44-0'
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2022-08-02T00:00:00Z'
