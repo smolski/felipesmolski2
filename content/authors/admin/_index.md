@@ -57,10 +57,10 @@ social:
   link: https://www.linkedin.com/in/felipe-smolski/
 - icon: r-project
   icon_pack: fab
-  link: https://smolski.github.io/softwarelivrer/
-- icon: mendeley
-  icon_pack: fab
-  link: https://smolski.gitbooks.io/mendeley/content/  
+  link: https://softwarelivrer.github.io/inicio/
+# - icon: mendeley
+#   icon_pack: fab
+#   link: https://smolski.gitbooks.io/mendeley/content/  
 
 # Link to a PDF of your resume/CV.
 # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.toml`, 
