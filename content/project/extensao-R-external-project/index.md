@@ -6,7 +6,7 @@ tags:
 date: "2020-04-27T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
-external_link: https://smolski.github.io/softwarelivrer/
+external_link: https://softwarelivrer.github.io/inicio/
 
 image:
   caption: Statistics
