@@ -1,5 +1,5 @@
 ---
-title: 'Evolução das despesas públicas em políticas sociais na região funcional 7 e impactos no IDESE'
+title: 'Municipal public transparency: analysis of the determining political and socioeconomic variables'
 
 authors:
     - Fenner VU,
