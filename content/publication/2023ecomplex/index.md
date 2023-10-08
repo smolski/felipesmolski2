@@ -7,7 +7,7 @@ authors:
     - Mascarini S
 
 date: '2023-10-01T00:00:00Z'
-doi: 'https://doi.org/10.5007/2175-8069.2022.e84420'
+#doi: 'https://doi.org/10.5007/2175-8069.2022.e84420'
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2023-10-08T00:00:00Z'
