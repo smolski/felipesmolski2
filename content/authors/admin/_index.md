@@ -52,9 +52,9 @@ social:
 - icon: lattes
   icon_pack: ai
   link: http://lattes.cnpq.br/0578969416600036
-- icon: linkedin
-  icon_pack: fab
-  link: https://www.linkedin.com/in/felipe-smolski/
+#- icon: linkedin
+#  icon_pack: fab
+#  link: https://www.linkedin.com/in/felipe-smolski/
 - icon: r-project
   icon_pack: fab
   link: https://softwarelivrer.github.io/inicio/
