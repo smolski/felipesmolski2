@@ -1,12 +1,49 @@
-name = "aafu"
+name = "Academic"
 license = "MIT"
-licenselink = "https://github.com/darshanbaral/aafu/blob/master/LICENSE"
-description = "Portfolio and blog theme with multiple theme colors"
-homepage = "https://github.com/darshanbaral/aafu"
-tags = ["portfolio", "accordion", "resume", "blog", "tailwind"]
-features = ["responsive", "dark", "clean"]
-min_version = "0.100.2"
+licenselink = "https://github.com/wowchemy/starter-hugo-academic/blob/master/LICENSE.md"
+description = "Use the website builder to easily build your site with 50+ widgets and deploy with one click! Fully customize your site with themes, plugins, and language packs."
+homepage = "https://github.com/wowchemy/starter-hugo-academic/"
+demosite = "https://wowchemy.com/hugo-themes/"
+tags = ["widgets",
+        "resume",
+        "portfolio",
+        "responsive",
+        "clean",
+        "personal",
+        "company",
+        "blog",
+        "minimal",
+        "light",
+        "dark",
+        "multilingual",
+        "documentation",
+        "landing page",
+        "projects",
+        "single page",
+        "contact form",
+        "mobile",
+        "gallery",
+        "search",
+        "presentation",
+        "simple",
+        "minimalist",
+        "starter",
+        "modern",
+        "one page",
+        "customizable",
+        "technical",
+        "product",
+        "slide"
+        ]
+features = ["page builder", "widgets", "themes", "search", "research publication system", "filterable portfolio",
+            "blog", "create courses", "talks", "events", "slides", "gallery", "contact form"]
 
 [author]
-  name = "Darshan Baral"
-  homepage = "https://www.darshanbaral.com/"
+  name = "George Cushen"
+  homepage = "https://georgecushen.com"
+
+# If porting an existing theme
+[original]
+  name = ""
+  homepage = ""
+  repo = ""
