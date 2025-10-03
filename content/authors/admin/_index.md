@@ -20,8 +20,11 @@ bio:
 
 interests:
 - Economic Development
-- Statistics with R
-- RStudio
+- Economic Complexity
+- Innovation
+- Regional Economics
+- Inequality
+
 
 education:
   courses:
