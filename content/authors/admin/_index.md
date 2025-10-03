@@ -27,7 +27,7 @@ education:
   courses:
   - course: Phd in Economics (Organizations, Markets and Innovation)
     institution: Unisinos University (UNISINOS)
-    year: 2021-2025
+    year: 2022-2025
   - course: Msc in Development and Public Policies
     institution: Federal University of South Frontier (UFFS)
     year: 2017
