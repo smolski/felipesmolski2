@@ -19,7 +19,7 @@ content:
       - publication
     tag: ''
     category: 'publication'
-    publication_type: ''
+    publication_type: 'publication'
     author: ''
     exclude_featured: false
     exclude_future: false
