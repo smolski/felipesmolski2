@@ -18,7 +18,7 @@ content:
     folders:
       - publication
     tag: ''
-    category: ''
+    category: 'publication'
     publication_type: ''
     author: ''
     exclude_featured: false
