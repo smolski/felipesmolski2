@@ -73,4 +73,4 @@ sitemap:
 cascade:
   - _target:
       path: /publication/**
-    share: false
+    share: true
